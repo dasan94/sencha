@@ -24,11 +24,7 @@ class HomePage extends Page {
   public async goToFrame() {
     await browser.pause(5000);
     await browser.switchToFrame(1);
-    console.log("## LOG ###");
-    $('#ext-element-1').getHTML().then(function(textvalue) {
-      console.log("#### el ####");
-      console.log(textvalue)
-    });  
+   
     await $('//*[@id="thumbnails-1040"]/div[1]').click();
     await browser.pause(5000);
 
