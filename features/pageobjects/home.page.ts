@@ -25,7 +25,6 @@ class HomePage extends Page {
     await browser.pause(5000);
     await browser.switchToFrame(1);
   }
-
   public async clickOnComponents() {
     await $('//*[@id="thumbnails-1040"]/div[1]').click();
     await browser.pause(1000);
