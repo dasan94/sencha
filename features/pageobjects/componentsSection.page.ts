@@ -1,6 +1,6 @@
 import Page from "./page";
 
-class HomePage extends Page {
+class ComponentsPage extends Page {
   public get kitchenSlinkhome() {
     return $("#ext-element-1746");
   }
@@ -17,14 +17,15 @@ class HomePage extends Page {
     return super.open("kitchensink");
   }
 
-  public async takeScreenShot() {
-    await this.content.saveScreenshot("captures/screenShot.png");
+  public async takeScreenShot(param) {
+    await this.content.saveScreenshot("captures/screenShot_" + param  + "_.png");
   }
 
   public async goToFrame() {
     await browser.pause(5000);
     await browser.switchToFrame(1);
   }
+
   public async clickOnComponents() {
     await $('//*[@id="thumbnails-1040"]/div[1]').click();
     await browser.pause(1000);
@@ -40,7 +41,7 @@ class HomePage extends Page {
     await browser.pause(1000);
   }
 
-  public async clickOnDisable() {
+  public async clickOnDisableOrEnable() {
     await $('//*[@id="checkbox-1054-inputEl"]').click();
     await browser.pause(1000);
   }
@@ -65,14 +66,7 @@ class HomePage extends Page {
     await browser.pause(1000);
   }
 
-  public async clickOnToogleDisable() {
-    await $(
-      "/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div/span/input"
-    ).click();
-    await browser.pause(1000);
-  }
-
-  public async clickOnToogleEnable() {
+  public async clickEnableOrDisable() {
     await $(
       "/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div/span/input"
     ).click();
@@ -81,20 +75,6 @@ class HomePage extends Page {
 
   public async clickOnMenuButtons() {
     await $('//*[@id="thumbnails-1040"]/div[3]').click();
-    await browser.pause(1000);
-  }
-
-  public async clickOnMenuDisable() {
-    await $(
-      "/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div/span/input"
-    ).click();
-    await browser.pause(1000);
-  }
-
-  public async clickOnMenuEnable() {
-    await $(
-      "/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div/span/input"
-    ).click();
     await browser.pause(1000);
   }
 
@@ -116,4 +96,4 @@ class HomePage extends Page {
   }
 }
 
-export default new HomePage();
+export default new ComponentsPage();

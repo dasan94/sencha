@@ -1,2 +1,4 @@
 node_modules
 captures
+allure-report
+allure-results
