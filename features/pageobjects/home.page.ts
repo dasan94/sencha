@@ -24,87 +24,97 @@ class HomePage extends Page {
   public async goToFrame() {
     await browser.pause(5000);
     await browser.switchToFrame(1);
-    console.log("## LOG ###");
-    $('#ext-element-1').getHTML().then(function(textvalue) {
-      console.log("#### el ####");
-      console.log(textvalue)
-    });  
-
-    //Engreso home click boton Buttos
-    await $('//*[@id="thumbnails-1040"]/div[1]').click();
-    await browser.pause(1000);
-    //#########################  Basic Buttons 
-//despues de dar click en Buttos redirige a typos de botones click Basick buttons
-   await $('//*[@id="thumbnails-1040"]/div[1]').click();
-        await browser.pause(1000);
-
-  // redirige a options
-    await $('//*[@id="thumbnails-1040"]/div[1]').click();
-    await browser.pause(1000);
-//click disable
-    await $('//*[@id="checkbox-1054-inputEl"]').click();
-    await browser.pause(1000);
-//Validacion disable
-    await $('//*[@id="button-1057"]').click();
-    await browser.pause(1000);
-//selecciona para habilitar 
-    await $('//*[@id="checkbox-1054-inputEl"]').click();
-    await browser.pause(1000);
-   
-// click volver buttons
-  await $('//*[@id="treeview-1030-record-11"]/tbody/tr/td').click();
-  await browser.pause(1000);
- 
-  //################## Toogle Buttons #######################
-// Click Toggle Buttons
-await $('//*[@id="thumbnails-1040"]/div[2]').click();
-await browser.pause(1000);
-
-//click disable
-await $('/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div/span/input').click();
-await browser.pause(1000);
-
-//selecciona para habilitar 
-await $('/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div/span/input').click();
-await browser.pause(1000);
- 
-// click volver buttons
-await $('//*[@id="treeview-1030-record-11"]/tbody/tr/td').click();
-await browser.pause(1000);
-
-  //################## Menu Buttons  #######################
-// Click Toggle Buttons
-await $('//*[@id="thumbnails-1040"]/div[3]').click();
-await browser.pause(1000);
-
-//click disable
-await $('/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div/span/input').click();
-await browser.pause(1000);
-
-//selecciona para habilitar 
-await $('/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div/span/input').click();
-await browser.pause(1000);
-
-//selecciona para lista 1
-await $('/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[2]/table/tbody/tr[1]/td[2]/a').click();
-await browser.pause(1500);
-
-// click volver buttons
-await $('//*[@id="treeview-1030-record-11"]/tbody/tr/td').click();
-await browser.pause(1000);
-
-
-// click volver examples
-await $('/html/body/div[6]/div[2]/div/div/div[2]').click();
-await browser.pause(1000);
-
-// click volver home
-await $('/html/body/div[2]/div[2]/div[1]/div/div/a').click();
-await browser.pause(1500);
-
   }
 
-}
+  public async clickOnComponents() {
+    await $('//*[@id="thumbnails-1040"]/div[1]').click();
+    await browser.pause(1000);
+  }
 
+  public async clickOnButtons() {
+    await $('//*[@id="thumbnails-1040"]/div[1]').click();
+    await browser.pause(1000);
+  }
+
+  public async clickOnBasicButtons() {
+    await $('//*[@id="thumbnails-1040"]/div[1]').click();
+    await browser.pause(1000);
+  }
+
+  public async clickOnDisable() {
+    await $('//*[@id="checkbox-1054-inputEl"]').click();
+    await browser.pause(1000);
+  }
+
+  public async validateClickDisable() {
+    await $('//*[@id="button-1057"]').click();
+    await browser.pause(1000);
+  }
+
+  public async clickOnEnable() {
+    await $('//*[@id="checkbox-1054-inputEl"]').click();
+    await browser.pause(1000);
+  }
+
+  public async clickOnButtonsMenu() {
+    await $('//*[@id="treeview-1030-record-11"]/tbody/tr/td').click();
+    await browser.pause(1000);
+  }
+
+  public async clickOnToogleButtons() {
+    await $('//*[@id="thumbnails-1040"]/div[2]').click();
+    await browser.pause(1000);
+  }
+
+  public async clickOnToogleDisable() {
+    await $(
+      "/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div/span/input"
+    ).click();
+    await browser.pause(1000);
+  }
+
+  public async clickOnToogleEnable() {
+    await $(
+      "/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div/span/input"
+    ).click();
+    await browser.pause(1000);
+  }
+
+  public async clickOnMenuButtons() {
+    await $('//*[@id="thumbnails-1040"]/div[3]').click();
+    await browser.pause(1000);
+  }
+
+  public async clickOnMenuDisable() {
+    await $(
+      "/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div/span/input"
+    ).click();
+    await browser.pause(1000);
+  }
+
+  public async clickOnMenuEnable() {
+    await $(
+      "/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div/span/input"
+    ).click();
+    await browser.pause(1000);
+  }
+
+  public async clickOnMenuOption() {
+    await $(
+      "/html/body/div[2]/div[2]/div[2]/div/div/div/div/div/div[2]/table/tbody/tr[1]/td[2]/a"
+    ).click();
+    await browser.pause(1500);
+  }
+
+  public async gotBackToExample() {
+    await $("/html/body/div[6]/div[2]/div/div/div[2]").click();
+    await browser.pause(1000);
+  }
+
+  public async goToHome() {
+    await $("/html/body/div[2]/div[2]/div[1]/div/div/a").click();
+    await browser.pause(1500);
+  }
+}
 
 export default new HomePage();
