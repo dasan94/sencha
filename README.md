@@ -1,4 +1,6 @@
-# sencha
+# SENCHA
+This project aims to explore how the SENCHA website can be tested with the webdriverio framework
+
 
 ## Run test
 With the following command run all test cases
