@@ -2,8 +2,8 @@
 
 ## Run test
 
-´´´npm run test´´´
+```npm run test```
 
 ## OPEN ALLURE-REPORT
 
-´´´allure generate allure-results/ && allure open´´´
+```allure generate allure-results/ && allure open```
